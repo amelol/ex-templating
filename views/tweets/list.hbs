@@ -1,0 +1,24 @@
+<form action="/tweets" method="GET">
+  <div class="mb-3">
+    <input type="text" name="user" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  <button type="submit" class="btn btn-primary">Search</button>
+
+</form>
+
+{{#each tweets as |tweet| }}
+{{#with tweet}}
+<div class="card">
+  <div class="card-header">
+    {{ user }}
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p> {{message}} </p>
+      <footer class="blockquote-footer"> <cite title="Source Title"> {{ createdAt }} </cite></footer>
+    </blockquote>
+  </div>
+</div>
+
+{{/with}}
+{{/each}}
